@@ -1,0 +1,323 @@
+/* ==========================================================================
+   theme.css
+   Modern SaaS dashboard styling for the House Price Prediction System.
+   Colors are supplied via CSS variables injected by components/styling.py
+   so this file works for both dark and light themes unchanged.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+html, body, [class*="css"] {
+    font-family: var(--font-body);
+}
+
+/* ---------------------------------------------------------------------- */
+/* App background: dark canvas + faint architectural blueprint grid       */
+/* ---------------------------------------------------------------------- */
+
+.stApp {
+    background:
+        linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%),
+        repeating-linear-gradient(0deg, var(--bg-grid) 0px, var(--bg-grid) 1px, transparent 1px, transparent 48px),
+        repeating-linear-gradient(90deg, var(--bg-grid) 0px, var(--bg-grid) 1px, transparent 1px, transparent 48px);
+    background-color: var(--bg);
+    color: var(--text-primary);
+}
+
+.est-nav-shell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    margin-bottom: 22px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--surface-border);
+    backdrop-filter: blur(20px);
+}
+
+.est-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.est-nav-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, rgba(0,217,192,0.16), rgba(255,255,255,0.08));
+    font-size: 24px;
+}
+
+.est-nav-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.est-nav-subtitle {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.est-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.est-nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.est-nav-link:hover {
+    color: var(--accent);
+    border-color: rgba(0,217,192,0.18);
+    background: rgba(0,217,192,0.05);
+}
+
+.sidebar-link {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.sidebar-link a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.sidebar-link a:hover {
+    color: var(--accent);
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+[data-testid="stSidebar"] {
+    background: var(--surface);
+    border-right: 1px solid var(--surface-border);
+    backdrop-filter: blur(18px);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Typography                                                              */
+/* ---------------------------------------------------------------------- */
+
+h1, h2, h3, .est-display {
+    font-family: var(--font-display) !important;
+    color: var(--text-primary) !important;
+    letter-spacing: -0.01em;
+}
+
+p, span, label, .est-body {
+    color: var(--text-secondary);
+}
+
+.est-mono {
+    font-family: var(--font-mono);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Glass card                                                              */
+/* ---------------------------------------------------------------------- */
+
+.est-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 18px;
+    padding: 24px 26px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    animation: est-fade-in 420ms ease both;
+}
+
+.est-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+}
+
+.est-card--flat:hover {
+    transform: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Hero                                                                     */
+/* ---------------------------------------------------------------------- */
+
+.est-hero {
+    border-radius: 24px;
+    padding: 48px 40px;
+    background:
+        radial-gradient(circle at 15% 20%, var(--accent-soft), transparent 45%),
+        radial-gradient(circle at 85% 0%, rgba(232, 163, 61, 0.10), transparent 40%),
+        var(--surface);
+    border: 1px solid var(--surface-border);
+    backdrop-filter: blur(20px);
+    animation: est-fade-in 500ms ease both;
+    margin-bottom: 28px;
+}
+
+.est-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Stat / metric chip                                                      */
+/* ---------------------------------------------------------------------- */
+
+.est-stat-value {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.est-stat-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Price result panel                                                      */
+/* ---------------------------------------------------------------------- */
+
+.est-price-panel {
+    text-align: center;
+    padding: 42px 24px;
+    border-radius: 20px;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 0 1px var(--accent-soft), 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: est-scale-in 480ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.est-price-value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 44px;
+    color: var(--gold);
+    margin: 6px 0 2px 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Badges                                                                   */
+/* ---------------------------------------------------------------------- */
+
+.est-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--surface-border);
+    color: var(--text-secondary);
+}
+
+.est-badge--accent {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Buttons                                                                  */
+/* ---------------------------------------------------------------------- */
+
+.stButton > button {
+    border-radius: 12px;
+    border: 1px solid var(--accent);
+    background: linear-gradient(135deg, var(--accent) 0%, rgba(0,0,0,0) 150%);
+    color: #06231F;
+    font-weight: 600;
+    padding: 0.55em 1.4em;
+    transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--accent-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Divider                                                                  */
+/* ---------------------------------------------------------------------- */
+
+.est-divider {
+    height: 1px;
+    background: var(--surface-border);
+    border: none;
+    margin: 22px 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Footer                                                                   */
+/* ---------------------------------------------------------------------- */
+
+.est-footer {
+    text-align: center;
+    padding: 24px 0 8px 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Animations                                                               */
+/* ---------------------------------------------------------------------- */
+
+@keyframes est-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes est-scale-in {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .est-card, .est-hero, .est-price-panel, .stButton > button {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsiveness                                                          */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .est-hero { padding: 30px 20px; }
+    .est-price-value { font-size: 32px; }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="anime character">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffd1d9"/>
+      <stop offset="1" stop-color="#fff1f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#f7f7fb"/>
+  <circle cx="32" cy="28" r="16" fill="url(#g)" stroke="#f2a6c2" stroke-width="1"/>
+  <path d="M18 24c2-6 10-8 14-8s12 2 14 8" fill="#ffd6e6" opacity="0.6"/>
+  <circle cx="24" cy="28" r="3" fill="#2b2b2b"/>
+  <circle cx="40" cy="28" r="3" fill="#2b2b2b"/>
+  <path d="M24 36c2 2 6 2 8 0" stroke="#2b2b2b" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <circle cx="22" cy="32" r="1.6" fill="#ff9fb1"/>
+  <circle cx="42" cy="32" r="1.6" fill="#ff9fb1"/>
+  <path d="M12 42c4-6 16-6 20-6s16 0 20 6v2c0 3-7 6-20 6S15 47 12 44v-2z" fill="#f3e8ff" opacity="0.6"/>
+</svg>

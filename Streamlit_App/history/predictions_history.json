@@ -1,0 +1,19 @@
+[
+  {
+    "id": "bff7c58b-2d34-4885-b211-e036b7e7167f",
+    "timestamp": "2026-07-03 00:58:43",
+    "predicted_price": 2629059.6942043044,
+    "area": 5000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "stories": 2,
+    "mainroad": "no",
+    "guestroom": "no",
+    "basement": "no",
+    "hotwaterheating": "no",
+    "airconditioning": "no",
+    "parking": 2,
+    "prefarea": "no",
+    "furnishingstatus": "furnished"
+  }
+]
